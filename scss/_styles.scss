@@ -113,7 +113,7 @@ body {
         background: $backgroundPictonBlue;
         content: "";
         position: absolute;
-        top: -18px;
+        top: -17px;
         left: 0;
         width: 100%;
         height: 1px;
@@ -211,16 +211,18 @@ body {
     background: $backgroundAquaHaze;
     min-height: 460px;
   }
-  .article-text {
+  .head-text {
     text-transform: uppercase;
     color: $colorNiagara;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 75px;
+    margin-bottom: 50px;
     h2 {
       font-weight: 800;
       letter-spacing: -0.5px;
+      margin-bottom: 20px;
     }
     span {
       background: url("../images/sprite/sprite.svg#heart-empty") no-repeat;
@@ -245,5 +247,47 @@ body {
     span:after {
       left: calc(100% + 20px);
     }
+  }
+}
+.article-text {
+  position: relative;
+  padding-left: 50px;
+  h3 {
+    font-weight: 600;
+    color: $colorBlackPearl;
+  }
+  p {
+    color: $colorBlackPearl;
+  }
+  .article-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $colorMountainMeadow;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 50%;
+  }
+  .article-icon::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 12px;
+  }
+  .branding:before {
+    background: url("../images/branding.png") no-repeat;
+    width: 14px;
+    height: 20px;
+  }
+  .development:before {
+    background: url("../images/development.png") no-repeat;
+    width: 16px;
+    height: 16px;
+  }
+  .consulting:before {
+    background: url("../images/consulting.png") no-repeat;
+    width: 17px;
+    height: 18px;
   }
 }
