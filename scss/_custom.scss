@@ -8,46 +8,64 @@ $container-max-widths: (
   xxl: 1320px,
 ) !default;
 
-//-------------
-$BlackPearl: #062033 !default;
-$blue: #0d6efd !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #d63384 !default;
-$red: #dc3545 !default;
-$orange: #fd7e14 !default;
-$yellow: #ffe600 !default;
-$green: #198754 !default;
-$teal: #20c997 !default;
-$cyan: #0dcaf0 !default;
+$font-family-sans-serif: "Open Sans", sans-serif;
+$font-size-base: 0.8125rem !default;
+
+$BlackPearl: $colorBlackPearl !default;
+$white: $colorWhite !default;
 
 $colors: (
-  "blue": $BlackPearl,
-  "cyan": $cyan,
+  "BlackPearl": $BlackPearl,
+  "white": $white,
 ) !default;
 
-$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer / 1.75,
-  2: $spacer / 2,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-  6: $spacer * 1.25,
-) !default;
-$info: $cyan !default;
-$font-family-sans-serif: "Oswald", sans-serif;
-$font-size-base: 1rem;
-$font-size-sm: 0.75rem;
-$font-size-lg: 0.9375rem;
-$line-height-base: 1.56;
-$h1-font-size: $font-size-base * 4 !default;
-$btn-padding-x-lg: 56px;
-$btn-padding-y-lg: 16.5px;
+$primary: $BlackPearl !default;
+$white: $white !default;
 
-$primary: $yellow !default;
-$link-color: $info !default;
+$link-color: $white !default;
 
-$btn-border-radius-lg: 0;
-$btn-font-weight: 500;
+$h1-font-size: $font-size-base * 4.76923 !default;
+
+//-------------
+// $BlackPearl: #062033 !default;
+// $blue: #0d6efd !default;
+// $indigo: #6610f2 !default;
+// $purple: #6f42c1 !default;
+// $pink: #d63384 !default;
+// $red: #dc3545 !default;
+// $orange: #fd7e14 !default;
+// $yellow: #ffe600 !default;
+// $green: #198754 !default;
+// $teal: #20c997 !default;
+// $cyan: #0dcaf0 !default;
+
+// $colors: (
+//   "blue": $BlackPearl,
+//   "cyan": $cyan,
+// ) !default;
+
+// $spacer: 1rem !default;
+// $spacers: (
+//   0: 0,
+//   1: $spacer / 1.75,
+//   2: $spacer / 2,
+//   3: $spacer,
+//   4: $spacer * 1.5,
+//   5: $spacer * 3,
+//   6: $spacer * 1.25,
+// ) !default;
+// $info: $cyan !default;
+// $font-family-sans-serif: "Oswald", sans-serif;
+// $font-size-base: 1rem;
+// $font-size-sm: 0.75rem;
+// $font-size-lg: 0.9375rem;
+// $line-height-base: 1.56;
+// $h1-font-size: $font-size-base * 4 !default;
+// $btn-padding-x-lg: 56px;
+// $btn-padding-y-lg: 16.5px;
+
+// $primary: $yellow !default;
+// $link-color: $info !default;
+
+// $btn-border-radius-lg: 0;
+// $btn-font-weight: 500;
