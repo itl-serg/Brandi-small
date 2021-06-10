@@ -99,9 +99,12 @@ body {
     }
   }
   .nav-list {
-    // position: absolute;
-    // right: 0;
-    // top: 100%;
+    position: absolute;
+    right: 15px;
+    top: 100%;
+    @include media(">=992px") {
+      position: static;
+    }
     li {
       position: relative;
       margin-left: 17px;
@@ -118,7 +121,9 @@ body {
       }
     }
     li:hover > a:before {
-      display: block;
+      @include media(">=992px") {
+        display: block;
+      }
     }
   }
 }
