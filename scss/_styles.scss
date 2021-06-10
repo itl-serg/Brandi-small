@@ -205,3 +205,45 @@ body {
     }
   }
 }
+// Article
+.article-wrapper {
+  .bg-wrapper {
+    background: $backgroundAquaHaze;
+    min-height: 460px;
+  }
+  .article-text {
+    text-transform: uppercase;
+    color: $colorNiagara;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 75px;
+    h2 {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    span {
+      background: url("../images/sprite/sprite.svg#heart-empty") no-repeat;
+      background-size: cover;
+      display: block;
+      width: 17px;
+      height: 16px;
+      position: relative;
+    }
+    span::before,
+    span:after {
+      background-color: $backgroundSilverSand;
+      width: 90px;
+      height: 1px;
+      position: absolute;
+      content: "";
+      top: 50%;
+    }
+    span:before {
+      left: calc(-100% - 90px);
+    }
+    span:after {
+      left: calc(100% + 20px);
+    }
+  }
+}
