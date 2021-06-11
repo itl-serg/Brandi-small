@@ -68,6 +68,13 @@ body {
         margin-left: 44px;
         letter-spacing: 0.4px;
       }
+    }
+    .nav-text {
+      margin-left: 15px;
+      @include media(">=992px") {
+        margin-left: 0;
+      }
+
       span:before {
         background: $backgroundPictonBlue;
         position: absolute;
@@ -79,60 +86,77 @@ body {
       }
     }
   }
-  button[type="button"] {
-    color: $colorWhite;
-    border: 3px solid $colorWhite;
-    position: relative;
-    box-shadow: none;
-
-    span::before,
-    span::after {
-      background: $colorWhite;
-      content: "";
-      width: 40px;
-      height: 3px;
-      position: absolute;
-      left: 4px;
-    }
-    span::before {
-      top: 10px;
-    }
-    span::after {
-      top: 20px;
-    }
+}
+button[type="button"] {
+  color: $colorWhite;
+  border: 3px solid $colorWhite;
+  position: relative;
+  box-shadow: none;
+  margin-right: 15px;
+  @include media(">=992px") {
+    margin-right: 0;
   }
-  .nav-list {
+
+  span::before,
+  span::after {
+    background: $colorWhite;
+    content: "";
+    width: 40px;
+    height: 3px;
     position: absolute;
-    right: 15px;
-    top: 100%;
-    @include media(">=992px") {
-      position: static;
-    }
-    li {
-      position: relative;
-      margin-left: 17px;
-      letter-spacing: 0.5px;
-      a:before {
-        background: $backgroundPictonBlue;
-        content: "";
-        position: absolute;
-        top: -27px;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        display: none;
-      }
-    }
-    li:hover > a:before {
-      @include media(">=992px") {
-        display: block;
-      }
-    }
-    li:last-child > a {
-      padding-right: 0;
-    }
+    left: 4px;
+  }
+  span::before {
+    top: 10px;
+  }
+  span::after {
+    top: 20px;
   }
 }
+.nav-list {
+  position: absolute;
+  right: 15px;
+  top: 100%;
+  margin-top: 15px;
+  @include media(">=992px") {
+    position: static;
+    margin-top: 0;
+  }
+  li {
+    position: relative;
+    margin-left: 17px;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+    @include media(">=992px") {
+      margin-bottom: 0;
+    }
+    a {
+      @include textFontFWS(500, 20px);
+      @include media(">=992px") {
+        @include textFontFWS(400, 13px);
+      }
+    }
+    a:before {
+      background: $backgroundPictonBlue;
+      content: "";
+      position: absolute;
+      top: -27px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      display: none;
+    }
+  }
+  li:hover > a:before {
+    @include media(">=992px") {
+      display: block;
+    }
+  }
+  li:last-child > a {
+    padding-right: 0;
+  }
+}
+
 .intro {
   min-height: 730px;
   display: flex;
@@ -277,8 +301,12 @@ body {
     height: 40px;
     border: 1px solid $colorMountainMeadow;
     position: absolute;
-    top: 4px;
-    left: 25px;
+    top: -45px;
+    left: 60px;
+    @include media(">=768px") {
+      top: 4px;
+      left: 25px;
+    }
     border-radius: 50%;
   }
   .section-icon::before {
