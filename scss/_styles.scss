@@ -1,4 +1,3 @@
-// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
 body {
   // padding-top: 20px;
   // &:before {
@@ -60,20 +59,24 @@ body {
     min-height: 70px;
     display: flex;
     align-items: center;
-    .nav-logo span {
-      position: relative;
-      display: inline-block;
-      margin-left: 44px;
-      letter-spacing: 0.4px;
-    }
-    span:before {
-      background: $backgroundPictonBlue;
-      position: absolute;
-      content: "";
-      width: 1px;
-      height: 17px;
-      top: 0;
-      left: -22px;
+    .navbar-wrap {
+      max-width: 1170px;
+      margin-top: 5px;
+      .nav-logo span {
+        position: relative;
+        display: inline-block;
+        margin-left: 44px;
+        letter-spacing: 0.4px;
+      }
+      span:before {
+        background: $backgroundPictonBlue;
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 17px;
+        top: 0;
+        left: -22px;
+      }
     }
   }
   button[type="button"] {
@@ -113,7 +116,7 @@ body {
         background: $backgroundPictonBlue;
         content: "";
         position: absolute;
-        top: -17px;
+        top: -27px;
         left: 0;
         width: 100%;
         height: 1px;
@@ -125,13 +128,15 @@ body {
         display: block;
       }
     }
+    li:last-child > a {
+      padding-right: 0;
+    }
   }
 }
 .intro {
   min-height: 730px;
   display: flex;
   align-items: flex-end;
-
   .introText {
     color: $colorWhite;
     h1 {
@@ -142,8 +147,7 @@ body {
       }
     }
     p {
-      font-size: 48px;
-      font-weight: 300;
+      @include textFontFWS(300, 48px);
       margin-bottom: 10px;
       span {
         color: $colorSpringGreen;
@@ -151,12 +155,11 @@ body {
     }
     em {
       display: inline-block;
-      font-size: 18px;
-      font-weight: 300;
-      margin-bottom: 95px;
+      margin-bottom: 92px;
       position: relative;
       padding: 0 32px;
       font-style: normal;
+      @include textFontFWS(300, 18px);
     }
     em::before,
     em:after {
@@ -175,7 +178,7 @@ body {
     }
     .intro-icon {
       text-align: center;
-      margin-bottom: 100px;
+      margin-bottom: 62px;
       a {
         display: inline-block;
         position: relative;
@@ -210,12 +213,15 @@ body {
   .bg-wrapper {
     background: $backgroundAquaHaze;
     min-height: 460px;
+    .section-size {
+      max-width: 1170px;
+    }
   }
   .head-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 75px;
+    padding-top: 70px;
     margin-bottom: 17px;
     font-size: 18px;
     h2 {
@@ -254,6 +260,9 @@ body {
   position: relative;
   padding-left: 50px;
   margin-top: 40px;
+  @include media(">=768px") {
+    padding-left: 80px;
+  }
   h3 {
     font-weight: 600;
     color: $colorBlackPearl;
@@ -269,7 +278,7 @@ body {
     border: 1px solid $colorMountainMeadow;
     position: absolute;
     top: 4px;
-    left: -4px;
+    left: 25px;
     border-radius: 50%;
   }
   .section-icon::before {
@@ -296,44 +305,54 @@ body {
 }
 .white-wrapper {
   min-height: 351px;
-  .link-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include media(">=768px") {
-      flex-direction: row;
-    }
-    li {
-      list-style-type: none;
-      position: relative;
-      margin: 10px auto;
-
-      a {
-        text-decoration: none;
-        @include textFont(700, 14px, 21px, $colorBlackPearl);
-      }
-
-      a::after {
-        background: $backgroundNiagara;
-        content: "";
-        width: calc(100% + 40px);
-        height: 30px;
-        position: absolute;
-        border-radius: 4px;
-        top: -5px;
-        left: -20px;
-        z-index: -1;
-        display: none;
-      }
-    }
-    li:hover > a {
-      color: $colorWhite;
-    }
-    li:hover > a::after {
-      display: inline-block;
-    }
+  .added-top-padding {
+    padding-top: 20px;
+  }
+  p {
+    padding-top: 27px;
+    max-width: 940px;
   }
 }
+.link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  padding-left: 0;
+  @include media(">=768px") {
+    flex-direction: row;
+    max-width: 530px;
+    margin-left: 76px;
+  }
+  li {
+    list-style-type: none;
+    position: relative;
+    a {
+      text-decoration: none;
+      @include textFont(700, 14px, 21px, $colorBlackPearl);
+    }
+
+    a::after {
+      background: $backgroundNiagara;
+      content: "";
+      width: calc(100% + 40px);
+      height: 30px;
+      position: absolute;
+      border-radius: 4px;
+      top: -5px;
+      left: -20px;
+      z-index: -1;
+      display: none;
+    }
+  }
+  li:hover > a {
+    color: $colorWhite;
+  }
+  li:hover > a::after {
+    display: inline-block;
+  }
+}
+
 // Article
 .rticle-wrapper {
   min-height: 600px;
