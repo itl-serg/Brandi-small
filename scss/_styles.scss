@@ -205,24 +205,25 @@ body {
     }
   }
 }
-// Article
-.article-wrapper {
+// Section
+.section-wrapper {
   .bg-wrapper {
     background: $backgroundAquaHaze;
     min-height: 460px;
   }
   .head-text {
-    text-transform: uppercase;
-    color: $colorNiagara;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 75px;
     margin-bottom: 17px;
+    font-size: 18px;
     h2 {
+      color: $colorNiagara;
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
     span {
       background: url("../images/sprite/sprite.svg#heart-empty") no-repeat;
@@ -249,7 +250,7 @@ body {
     }
   }
 }
-.article-text {
+.section-text {
   position: relative;
   padding-left: 50px;
   margin-top: 40px;
@@ -261,7 +262,7 @@ body {
   p {
     color: $colorBlackPearl;
   }
-  .article-icon {
+  .section-icon {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -271,7 +272,7 @@ body {
     left: -4px;
     border-radius: 50%;
   }
-  .article-icon::before {
+  .section-icon::before {
     content: "";
     position: absolute;
     top: 10px;
@@ -292,4 +293,92 @@ body {
     width: 17px;
     height: 18px;
   }
+}
+.white-wrapper {
+  min-height: 351px;
+  .link-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media(">=768px") {
+      flex-direction: row;
+    }
+    li {
+      list-style-type: none;
+      position: relative;
+      margin: 10px auto;
+
+      a {
+        text-decoration: none;
+        @include textFont(700, 14px, 21px, $colorBlackPearl);
+      }
+
+      a::after {
+        background: $backgroundNiagara;
+        content: "";
+        width: calc(100% + 40px);
+        height: 30px;
+        position: absolute;
+        border-radius: 4px;
+        top: -5px;
+        left: -20px;
+        z-index: -1;
+        display: none;
+      }
+    }
+    li:hover > a {
+      color: $colorWhite;
+    }
+    li:hover > a::after {
+      display: inline-block;
+    }
+  }
+}
+// Article
+.rticle-wrapper {
+  min-height: 600px;
+}
+.article-img {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.img-bg-text {
+  position: relative;
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      background: url("../images/labore.png") no-repeat;
+      width: 40px;
+      height: 40px;
+      margin: 17px auto 27px;
+      display: block;
+    }
+    em {
+      font-style: normal;
+      @include textFont(700, 18px, 21px, $colorWhite);
+      margin-bottom: 5px;
+    }
+    p {
+      @include textFont(400, 14px, 21px, $colorWhite);
+    }
+  }
+}
+.img-bg-text::after {
+  background: $backgroundNiagaraTransparent;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

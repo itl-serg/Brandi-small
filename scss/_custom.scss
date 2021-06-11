@@ -8,6 +8,9 @@ $container-max-widths: (
   xxl: 1320px,
 ) !default;
 
+$grid-gutter-width: 1rem !default;
+$container-padding-x: $grid-gutter-width / 1 !default;
+
 $font-family-sans-serif: "Open Sans", sans-serif;
 $font-size-base: 0.8125rem !default;
 $line-height-base: 1.615385;
