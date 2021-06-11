@@ -113,6 +113,10 @@ button[type="button"] {
     top: 20px;
   }
 }
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
 .nav-list {
   position: absolute;
   right: 15px;
